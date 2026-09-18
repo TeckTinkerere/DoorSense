@@ -1,0 +1,8 @@
+{
+  "artifacts": {
+    "model.json": "5ed175d7f42e3b071262f915a390dc3b781fce64cc7e8b6932a1352fac1a6eab"
+  },
+  "format": "JSON arrays; no executable serialization",
+  "model_id": "doorlens-phase-final-v1",
+  "version": "1.0.0"
+}

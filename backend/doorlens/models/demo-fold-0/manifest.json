@@ -1,0 +1,8 @@
+{
+  "artifacts": {
+    "model.json": "7bd09a0aa9dea6f0675c4de60730e5af1f10a8e900da2a06cd017f5dcf6f1f07"
+  },
+  "format": "JSON arrays; no executable serialization",
+  "model_id": "doorlens-phase-dev-fold-0-v1",
+  "version": "1.0.0"
+}

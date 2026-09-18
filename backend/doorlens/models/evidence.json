@@ -1,0 +1,140 @@
+{
+  "development": {
+    "abnormal": 23,
+    "current_correct": 87,
+    "current_metrics": {
+      "abnormal_f1": 0.9777777777777777,
+      "abnormal_precision": 1.0,
+      "abnormal_recall": 0.9565217391304348,
+      "accuracy": 0.9886363636363636,
+      "fn": 1,
+      "fp": 0,
+      "macro_f1": 0.9850720949957591,
+      "n": 88,
+      "normal_false_alarm_rate": 0.0,
+      "tn": 65,
+      "tp": 22
+    },
+    "n": 88,
+    "normal": 65,
+    "phase_correct": 88,
+    "phase_metrics": {
+      "abnormal_f1": 1.0,
+      "abnormal_precision": 1.0,
+      "abnormal_recall": 1.0,
+      "accuracy": 1.0,
+      "fn": 0,
+      "fp": 0,
+      "macro_f1": 1.0,
+      "n": 88,
+      "normal_false_alarm_rate": 0.0,
+      "tn": 65,
+      "tp": 23
+    }
+  },
+  "limitations": [
+    "The 22-cycle reserve was previously examined; reproducing it does not make it a fresh holdout.",
+    "No original asset or collection-run identities are available; independence and fleet generalisation cannot be established.",
+    "Both models achieved 22/22 on that small reserve. No demonstrated reserve accuracy advantage justifies additional complexity.",
+    "Sensitivity probes are assumed recording changes, not calibrated sensor tolerances or new labelled fault examples.",
+    "Stability does not establish correctness; no safe-to-depart, component diagnosis, or remaining-life claim is made.",
+    "Recorded Test.csv has no available ground truth. Its predictions are not accuracy evidence."
+  ],
+  "metric": "Exact supplied interval boundaries were reproduced; same-label IoU-weighted F1 therefore equals cycle accuracy here. Abnormal-class recall is a separate metric.",
+  "model_description": "Direction-specific logistic models, 12 cycle summaries and 9 relative-travel reference residuals; L2 = 1, decision threshold = 0.5.",
+  "reserve": {
+    "abnormal": 7,
+    "current_correct": 22,
+    "current_metrics": {
+      "abnormal_f1": 1.0,
+      "abnormal_precision": 1.0,
+      "abnormal_recall": 1.0,
+      "accuracy": 1.0,
+      "fn": 0,
+      "fp": 0,
+      "macro_f1": 1.0,
+      "n": 22,
+      "normal_false_alarm_rate": 0.0,
+      "tn": 15,
+      "tp": 7
+    },
+    "n": 22,
+    "normal": 15,
+    "phase_correct": 22,
+    "phase_metrics": {
+      "abnormal_f1": 1.0,
+      "abnormal_precision": 1.0,
+      "abnormal_recall": 1.0,
+      "accuracy": 1.0,
+      "fn": 0,
+      "fp": 0,
+      "macro_f1": 1.0,
+      "n": 22,
+      "normal_false_alarm_rate": 0.0,
+      "tn": 15,
+      "tp": 7
+    }
+  },
+  "scope": "Exploratory sensitivity of frozen fold models on previously examined DEVELOPMENT cycles only; synthetic probes, not new accuracy validation.",
+  "sensitivity": {
+    "current_affected": 7,
+    "n": 88,
+    "phase_affected": 2,
+    "probes": [
+      {
+        "current_changes": 1,
+        "id": "current_minus_5pct",
+        "label": "Current −5%",
+        "phase_changes": 1
+      },
+      {
+        "current_changes": 6,
+        "id": "current_plus_5pct",
+        "label": "Current +5%",
+        "phase_changes": 0
+      },
+      {
+        "current_changes": 0,
+        "id": "voltage_minus_5pct",
+        "label": "Voltage −5%",
+        "phase_changes": 2
+      },
+      {
+        "current_changes": 0,
+        "id": "voltage_plus_5pct",
+        "label": "Voltage +5%",
+        "phase_changes": 0
+      },
+      {
+        "current_changes": 0,
+        "id": "drop_each_20th_interior",
+        "label": "Sparse sample removal",
+        "phase_changes": 1
+      }
+    ]
+  },
+  "sources": [
+    {
+      "label": "OFFLINE_EXPERIMENT_PLAN.md",
+      "path": "../research/OFFLINE_EXPERIMENT_PLAN.md"
+    },
+    {
+      "label": "SIGNATURE_EXPERIMENT_PLAN.md",
+      "path": "../research/SIGNATURE_EXPERIMENT_PLAN.md"
+    },
+    {
+      "label": "offline_results/benchmark.json",
+      "path": "../research/offline_results/benchmark.json"
+    },
+    {
+      "label": "signature_results/sensitivity.json",
+      "path": "../research/signature_results/sensitivity.json"
+    }
+  ],
+  "title": "Saved experiment, reproduced during model packaging",
+  "verification": {
+    "parity_max_abs_error": 2.220446049250313e-16,
+    "signature_reproduced": true,
+    "verified_at": "Reproduced by scripts/package_models.py; see artifacts/parity-report.json for run time."
+  }
+}

@@ -1,0 +1,17 @@
+# DoorLens: three-minute live demonstration
+
+Before presenting, run `scripts/start.ps1`, open http://127.0.0.1:8000, and have `..\NebulaX-Hackathon-ProblemStatement\PS3\02_Datasets\Door\Test.csv` available (or use the equivalent file under `DOORLENS_SOURCE_ROOT`). Build and test in advance. This script is a presentation guide; it is not a claim that a demonstration video has been recorded.
+
+| Time | Action | Suggested narration |
+| --- | --- | --- |
+| 0:00–0:25 | Show the upload screen. | “DoorLens classifies recorded door movements and lets us explore whether explicit recording assumptions change a result. It is an offline analysis tool; it is not a safety or departure-authorisation system.” |
+| 0:25–0:55 | Upload Test.csv and show the returned cycle list and model identity. | “The original recording is segmented into movements and classified using one frozen Python model. Uploads cannot train it. These are predictions; the supplied test file has no ground-truth labels for us to claim test accuracy.” |
+| 0:55–1:20 | Select a movement and inspect current and position. Show the normal-reference comparison. | “We can inspect the recorded signals and the reference for this movement direction. Position remains recorded counts. The reference shows training-data variation, not a certified operating limit.” |
+| 1:20–2:05 | Load the labelled development example, select current ×0.95 and run **Challenge this result**. | “This is a selected development example using its own fold-trained model. The backend copies this already segmented movement, reduces the recorded current by five percent, and recomputes the score. The result shown is calculated now. The original recording is unchanged.” |
+| 2:05–2:30 | Compare original and synthetic labels/scores; open the methodology context. | “This example changes label under that assumption. Five percent is an illustrative recording change, not a verified sensor tolerance. A changed label prompts further investigation; an unchanged label does not prove correctness. The methodology gives the aggregate context, rather than treating this selected example as representative.” |
+| 2:30–2:50 | Return to the uploaded analysis if retained, or upload Test.csv again. Download the original CSV/ZIP. | “Official exports retain the original predictions and original timestamps. Synthetic probes never overwrite them. The ZIP contains exactly one required CSV.” |
+| 2:50–3:00 | Finish on the result workspace. | “The practical contribution is inspectable, reproducible classification plus an explicit check of recording assumptions. The next validation needs independently identified door recordings, not more claims from the same small dataset.” |
+
+The expected fold-zero example transition is verified against the research during model packaging. Do not narrate exact scores from memory: read the dynamically calculated values and the model label shown by the application. If the runtime result differs from the packaged parity evidence, stop the demo claim and investigate; do not switch models or force the transition.
+
+For the aggregate context, use the counts in the application methodology view and packaged evidence, distinguishing saved/reproduced research evidence from the current selected-cycle calculation. Current and voltage rescaling and removal of every twentieth interior sample are five separate probes, not a combined uncertainty model.

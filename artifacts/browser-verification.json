@@ -1,0 +1,77 @@
+{
+  "verified_at": "2026-09-18T14:57:29.724Z",
+  "browser": "153.0.8010.48",
+  "base_url": "http://127.0.0.1:8000",
+  "viewports": [
+    {
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "width": 760,
+      "height": 900
+    }
+  ],
+  "checks": {
+    "real_test_upload": true,
+    "test_cycles": 38,
+    "ui_download_matches_api": true,
+    "ui_download_matches_saved_artifact": true,
+    "delayed_probe_did_not_attach_to_new_cycle": true,
+    "correct_development_model": true,
+    "real_current_and_voltage_probes": true,
+    "recorded_timestamp_axis_preserved": true,
+    "original_csv_unchanged": true,
+    "malformed_csv_error": true,
+    "expired_download_error_does_not_create_file": true,
+    "responsive_no_document_overflow": true
+  },
+  "demo_current_probe": {
+    "original": {
+      "prediction": "Abnormal resistance",
+      "score": 0.6369046416612815
+    },
+    "altered": {
+      "prediction": "Normal",
+      "score": 0.3600240212649819
+    }
+  },
+  "external_requests": [],
+  "unexpected_browser_errors": [],
+  "network_test": "External origins actively blocked during the browser session; local HTTP allowed. The laptop network was not disconnected.",
+  "requested_local_paths": [
+    "/",
+    "/_next/static/chunks/408uwwhdjc-x0.css",
+    "/_next/static/chunks/1i-50h39r1ldu.css",
+    "/_next/static/chunks/10-q1gy8k2hff.js",
+    "/_next/static/chunks/2vkc8890m0s-a.js",
+    "/_next/static/chunks/3k6le45hgamqy.js",
+    "/_next/static/chunks/turbopack-2_9oyb9jnvwmv.js",
+    "/_next/static/chunks/2pflm2cu8yz-9.js",
+    "/_next/static/chunks/39j0yk56d0cj9.js",
+    "/_next/static/chunks/1x9kph5nayyw6.js",
+    "/_next/static/media/manrope-latin-wght-normal.1p_a2k8qd5zhp.woff2",
+    "/icon.svg",
+    "/api/health",
+    "/api/methodology",
+    "/api/analyze",
+    "/api/analyses/b9254e482887423c98f346d27efaf52f.32dc5575f2ee4440b18c2a645f8ea4e6/cycles/0",
+    "/_next/static/chunks/0dodh87z6ac1m.js",
+    "/api/analyses/b9254e482887423c98f346d27efaf52f.32dc5575f2ee4440b18c2a645f8ea4e6/predictions.zip",
+    "/api/analyses/b9254e482887423c98f346d27efaf52f.32dc5575f2ee4440b18c2a645f8ea4e6/predictions.csv",
+    "/api/analyses/b9254e482887423c98f346d27efaf52f.32dc5575f2ee4440b18c2a645f8ea4e6/cycles/0/challenge",
+    "/api/analyses/b9254e482887423c98f346d27efaf52f.32dc5575f2ee4440b18c2a645f8ea4e6/cycles/1",
+    "/api/analyses/b9254e482887423c98f346d27efaf52f.32dc5575f2ee4440b18c2a645f8ea4e6/cycles/2",
+    "/api/demo",
+    "/api/analyses/438cd119872a4f62abb33e6216ada490.699fcfaefeb1251742b94acd6972cca6/cycles/0",
+    "/api/analyses/438cd119872a4f62abb33e6216ada490.699fcfaefeb1251742b94acd6972cca6/predictions.csv",
+    "/api/analyses/438cd119872a4f62abb33e6216ada490.699fcfaefeb1251742b94acd6972cca6/cycles/0/challenge",
+    "/api/analyses/438cd119872a4f62abb33e6216ada490.699fcfaefeb1251742b94acd6972cca6/predictions.zip"
+  ],
+  "test_csv_sha256": "2f94f8f5e2ccd6bce223a7c2f9fd2c7b974aa17cbce3d7bc3521dd100d7a079b",
+  "test_zip_sha256": "6ac3738caa9776c4a01340ed9c483a2868ac1b9d2349e9e14f8d1e010f828c26"
+}

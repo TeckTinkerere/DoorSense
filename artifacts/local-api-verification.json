@@ -1,0 +1,104 @@
+{
+  "verified_at": "2026-09-18T14:50:56.073278+00:00",
+  "base_url": "http://127.0.0.1:8000",
+  "source": "Actual running application HTTP responses; downloads saved unchanged.",
+  "runs": [
+    {
+      "file": "Train.csv",
+      "input_sha256": "acdec4aad0cadf4d7270d4766ed7e8541f73340721c0540cbb5242dcb951eaa9",
+      "model_id": "doorlens-phase-final-v1",
+      "summary": {
+        "cycle_count": 110,
+        "normal_count": 80,
+        "abnormal_count": 30
+      },
+      "api_inference_ms": 1567.539,
+      "http_upload_to_response_ms": 1614.358,
+      "csv_sha256": "50dec888024051bd653da8f06795add5301e85d15e0370dbc60863b294ef631b",
+      "probe_results_first_cycle": [
+        {
+          "probe": "current_minus_5pct",
+          "label_changed": false,
+          "score": 0.013565581601772746
+        },
+        {
+          "probe": "current_plus_5pct",
+          "label_changed": false,
+          "score": 0.004229872953020659
+        },
+        {
+          "probe": "voltage_minus_5pct",
+          "label_changed": false,
+          "score": 0.0026801853962326086
+        },
+        {
+          "probe": "voltage_plus_5pct",
+          "label_changed": false,
+          "score": 0.027163888098979377
+        },
+        {
+          "probe": "drop_each_20th_interior",
+          "label_changed": false,
+          "score": 0.007011831786195107
+        }
+      ],
+      "original_exports_unchanged": true
+    },
+    {
+      "file": "Test.csv",
+      "input_sha256": "8cbea142cf46eac40455ddcac17e334c1842a6f7632f006e48c7d0d41582bfe3",
+      "model_id": "doorlens-phase-final-v1",
+      "summary": {
+        "cycle_count": 38,
+        "normal_count": 30,
+        "abnormal_count": 8
+      },
+      "api_inference_ms": 588.424,
+      "http_upload_to_response_ms": 610.841,
+      "csv_sha256": "2f94f8f5e2ccd6bce223a7c2f9fd2c7b974aa17cbce3d7bc3521dd100d7a079b",
+      "probe_results_first_cycle": [
+        {
+          "probe": "current_minus_5pct",
+          "label_changed": false,
+          "score": 0.05092477927413456
+        },
+        {
+          "probe": "current_plus_5pct",
+          "label_changed": false,
+          "score": 0.015336844539433042
+        },
+        {
+          "probe": "voltage_minus_5pct",
+          "label_changed": false,
+          "score": 0.009385774139045695
+        },
+        {
+          "probe": "voltage_plus_5pct",
+          "label_changed": false,
+          "score": 0.10152844836808504
+        },
+        {
+          "probe": "drop_each_20th_interior",
+          "label_changed": false,
+          "score": 0.029756227292155223
+        }
+      ],
+      "original_exports_unchanged": true
+    }
+  ],
+  "demo_result": {
+    "model_id": "doorlens-phase-dev-fold-0-v1",
+    "original": {
+      "prediction": "Abnormal resistance",
+      "score": 0.6369046416612815
+    },
+    "altered": {
+      "prediction": "Normal",
+      "score": 0.3600240212649819
+    },
+    "label_changed": true
+  },
+  "unknown_api_json_404": true,
+  "test_ground_truth_available": false,
+  "latency_note": "One measured run per supplied file on this laptop; not a throughput benchmark or real-world accuracy result."
+}

@@ -1,0 +1,154 @@
+{
+  "comparisons": 2091,
+  "demo_original": {
+    "direction": "Open",
+    "prediction": "Abnormal resistance",
+    "score": 0.6369046416612815
+  },
+  "demo_probes": {
+    "current_minus_5pct": {
+      "direction": "Open",
+      "prediction": "Normal",
+      "score": 0.3600240212649819
+    },
+    "current_plus_5pct": {
+      "direction": "Open",
+      "prediction": "Abnormal resistance",
+      "score": 0.8458001140694152
+    },
+    "drop_each_20th_interior": {
+      "direction": "Open",
+      "prediction": "Normal",
+      "score": 0.4968977949258324
+    },
+    "voltage_minus_5pct": {
+      "direction": "Open",
+      "prediction": "Normal",
+      "score": 0.21147715862876196
+    },
+    "voltage_plus_5pct": {
+      "direction": "Open",
+      "prediction": "Abnormal resistance",
+      "score": 0.958002546357846
+    }
+  },
+  "development": {
+    "current": {
+      "abnormal_f1": 0.9777777777777777,
+      "abnormal_precision": 1.0,
+      "abnormal_recall": 0.9565217391304348,
+      "accuracy": 0.9886363636363636,
+      "fn": 1,
+      "fp": 0,
+      "macro_f1": 0.9850720949957591,
+      "n": 88,
+      "normal_false_alarm_rate": 0.0,
+      "tn": 65,
+      "tp": 22
+    },
+    "phase": {
+      "abnormal_f1": 1.0,
+      "abnormal_precision": 1.0,
+      "abnormal_recall": 1.0,
+      "accuracy": 1.0,
+      "fn": 0,
+      "fp": 0,
+      "macro_f1": 1.0,
+      "n": 88,
+      "normal_false_alarm_rate": 0.0,
+      "tn": 65,
+      "tp": 23
+    }
+  },
+  "existing_package_hashes_verified": true,
+  "existing_package_max_parameter_error": 0.0,
+  "parity_max_abs_error": 2.220446049250313e-16,
+  "predicted_labels_identical": true,
+  "previously_examined_reserve": {
+    "current": {
+      "abnormal_f1": 1.0,
+      "abnormal_precision": 1.0,
+      "abnormal_recall": 1.0,
+      "accuracy": 1.0,
+      "fn": 0,
+      "fp": 0,
+      "macro_f1": 1.0,
+      "n": 22,
+      "normal_false_alarm_rate": 0.0,
+      "tn": 15,
+      "tp": 7
+    },
+    "phase": {
+      "abnormal_f1": 1.0,
+      "abnormal_precision": 1.0,
+      "abnormal_recall": 1.0,
+      "accuracy": 1.0,
+      "fn": 0,
+      "fp": 0,
+      "macro_f1": 1.0,
+      "n": 22,
+      "normal_false_alarm_rate": 0.0,
+      "tn": 15,
+      "tp": 7
+    }
+  },
+  "sensitivity": {
+    "current_affected": 7,
+    "n": 88,
+    "phase_affected": 2,
+    "probes": [
+      {
+        "current_changes": 1,
+        "id": "current_minus_5pct",
+        "label": "Current −5%",
+        "phase_changes": 1
+      },
+      {
+        "current_changes": 6,
+        "id": "current_plus_5pct",
+        "label": "Current +5%",
+        "phase_changes": 0
+      },
+      {
+        "current_changes": 0,
+        "id": "voltage_minus_5pct",
+        "label": "Voltage −5%",
+        "phase_changes": 2
+      },
+      {
+        "current_changes": 0,
+        "id": "voltage_plus_5pct",
+        "label": "Voltage +5%",
+        "phase_changes": 0
+      },
+      {
+        "current_changes": 0,
+        "id": "drop_each_20th_interior",
+        "label": "Sparse sample removal",
+        "phase_changes": 1
+      }
+    ]
+  },
+  "signature_reproduced": true,
+  "source_sha256": {
+    "02_Datasets/Door/Train.csv": "acdec4aad0cadf4d7270d4766ed7e8541f73340721c0540cbb5242dcb951eaa9",
+    "02_Datasets/Door/Train_Segments_Answer.csv": "72aecd080ccd8ff2481d3dc9527dd9fb3ee6674446ad7c553558ea5a990c03cc",
+    "backend/doorlens/inference/core.py": "f989f59ef78dba736edc82ab8525e7a198c7f18ca80f818ff15448538d7960d4",
+    "research/OFFLINE_EXPERIMENT_PLAN.md": "88d0c5b7bef53e404cd0265706e7ed4148d4c1a6d56d5da2b310b6dcd7ccebdd",
+    "research/SIGNATURE_EXPERIMENT_PLAN.md": "c23196e1e5076b47fc5f67dfc27e4a033b50da706111c355aec81e5cd4d2dc74",
+    "research/offline_benchmark.py": "3e02006728bab4133f8f21db6ab9e5ee9c598bfcab263c50b1fb9bedc06645b8",
+    "research/offline_results/dev_current_0.csv": "9ac497a41dbe69b18b6dfe0e977bc63bbe41f6745a883dee03bce464da6af93a",
+    "research/offline_results/dev_phase_1.csv": "8b75562d816a05392bea08fbcb94b6daace40e453cdac4714d2ef6d803d7ae54",
+    "research/offline_results/frozen_selection.json": "cd353da54b3c9ea60063c81bffbdca01b7d61f039902c0527a5e79a74a8bdcdc",
+    "research/offline_results/reserve_current_0.csv": "96814bbd4d9d957c2a40a43f61d71b76f5e2c24ca5659a0a50f882b8a0a4f27d",
+    "research/offline_results/reserve_phase_1.csv": "ca0a8724c34299b1e627531ffc0b86eb92752be80cec38f9308b8071f5a3d08d",
+    "research/signature_probe.py": "067f1c66c0e70ee2abb02692cb515b26c42017eb2d7c319904a2b90fa3270d5c",
+    "research/signature_results/sensitivity.json": "7b1f6d48894dbb028d437cf891e52d7e473b14c2e42c0dc4d5840acc7eb0c4a4"
+  },
+  "test_used_for_packaging": false,
+  "tolerance": 1e-09,
+  "train_cycles": 110,
+  "train_rows": 18036,
+  "verification_python": "3.12.10",
+  "verified_at": "2026-09-18T19:58:24.870243+00:00"
+}
