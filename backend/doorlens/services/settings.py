@@ -12,6 +12,7 @@ APP_ROOT = PACKAGE_ROOT.parents[1]
 @dataclass(frozen=True)
 class Settings:
     max_upload_bytes: int = 20 * 1024 * 1024
+    max_acv_upload_bytes: int = 64 * 1024 * 1024
     max_rows: int = 300_000
     analysis_ttl_seconds: float = 30 * 60
     max_analyses: int = 3
@@ -32,6 +33,7 @@ class Settings:
         values = {}
         conversions = {
             "MAX_UPLOAD_BYTES": ("max_upload_bytes", int),
+            "MAX_ACV_UPLOAD_BYTES": ("max_acv_upload_bytes", int),
             "MAX_ROWS": ("max_rows", int),
             "ANALYSIS_TTL_SECONDS": ("analysis_ttl_seconds", float),
             "MAX_ANALYSES": ("max_analyses", int),

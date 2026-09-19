@@ -5,9 +5,9 @@ import type { Data, Layout } from "plotly.js";
 import type { Trace, CycleDetail, Challenge } from "@/lib/types";
 import styles from "./Workbench.module.css";
 const Plot = dynamic(() => import("react-plotly.js"), { ssr:false, loading:() => <div className={styles.plotLoading}>Preparing the signal view…</div> });
-const navy = "#244b65", amber = "#af6b20", green = "#397451";
+export const navy = "#244b65", amber = "#af6b20", green = "#397451";
 const config = { responsive:true, displaylogo:false, scrollZoom:false, modeBarButtonsToRemove:["lasso2d","select2d","autoScale2d"] as ("lasso2d"|"select2d"|"autoScale2d")[], toImageButtonOptions:{format:"png" as const,filename:"doorlens-recorded-evidence",scale:2} };
-const base:Partial<Layout> = { autosize:true, paper_bgcolor:"transparent", plot_bgcolor:"#fff", font:{family:"Manrope Variable, sans-serif",size:11,color:"#5d6a71"}, hovermode:"x unified", margin:{l:58,r:25,t:12,b:47}, showlegend:false, hoverlabel:{bgcolor:"#fff",bordercolor:"#d8ddd9",font:{color:"#172d40"}}, xaxis:{gridcolor:"#eef0ed",zeroline:false}, yaxis:{gridcolor:"#eef0ed",zeroline:false}, dragmode:"zoom" };
+export const base:Partial<Layout> = { autosize:true, paper_bgcolor:"transparent", plot_bgcolor:"#fff", font:{family:"Manrope Variable, sans-serif",size:11,color:"#5d6a71"}, hovermode:"x unified", margin:{l:58,r:25,t:12,b:47}, showlegend:false, hoverlabel:{bgcolor:"#fff",bordercolor:"#d8ddd9",font:{color:"#172d40"}}, xaxis:{gridcolor:"#eef0ed",zeroline:false}, yaxis:{gridcolor:"#eef0ed",zeroline:false}, dragmode:"zoom" };
 function trace(x:(number|string|null)[], y:(number|null)[], name:string, color:string, extra:Record<string,unknown> = {}):Data {
  return { x, y, name, type:"scatter", mode:"lines", line:{color,width:1.7}, connectgaps:false, ...extra } as Data;
 }
@@ -16,7 +16,7 @@ function trace(x:(number|string|null)[], y:(number|null)[], name:string, color:s
 function recordedTimes(data:Trace):(string|null)[] {
  return data.time_ms.map(value=>value===null?null:new Date(value).toISOString().slice(0,-1));
 }
-function ResponsivePlot({data,layout}:{data:Data[];layout:Partial<Layout>}) {
+export function ResponsivePlot({data,layout}:{data:Data[];layout:Partial<Layout>}) {
  const container=useRef<HTMLDivElement>(null);
  const [width,setWidth]=useState(0);
  useEffect(()=>{

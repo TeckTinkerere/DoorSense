@@ -1,2 +1,2 @@
-import Workbench from "@/components/Workbench";
-export default function Page() { return <Workbench />; }
+import Suite from "@/components/Suite";
+export default function Page() { return <Suite />; }

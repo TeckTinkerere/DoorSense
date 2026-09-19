@@ -1,0 +1,10 @@
+.venv
+.git
+**/node_modules
+**/__pycache__
+frontend/out
+frontend/.next
+artifacts
+tests
+Train_upload.csv
+*.csv

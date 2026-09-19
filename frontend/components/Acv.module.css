@@ -1,0 +1,29 @@
+.wrap{padding:30px 4.2% 56px;max-width:1500px;margin:0 auto}
+.intro h1{font-size:clamp(30px,3.6vw,48px);font-weight:600;line-height:1.15;letter-spacing:-2px;max-width:720px}
+.intro p{color:var(--muted);font-size:15px;line-height:1.8;max-width:600px;margin-top:16px}
+.drop{margin-top:28px;background:#fff;border:1px dashed #a5b8bd;border-radius:14px;padding:30px;display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+.drop.dragging{background:#eaf2ee;border-color:var(--green)}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.btn,.btn2{min-height:40px;border-radius:8px;padding:10px 16px;font-size:12px;font-weight:700;display:inline-flex;align-items:center;text-decoration:none;white-space:nowrap}
+.btn{border:1px solid var(--ink);color:#fff;background:var(--ink)}
+.btn2{border:1px solid #bbc6c7;background:transparent;color:var(--ink)}
+.note{font-size:11px;color:var(--muted);line-height:1.7}
+.err{background:#f8eae4;border:1px solid #d4b6a9;color:#803e29;border-radius:8px;padding:13px 15px;margin-top:16px;font-size:13px}
+.hero{margin-top:26px;display:grid;grid-template-columns:minmax(0,320px) minmax(0,1fr);gap:24px;align-items:start}
+.answer{background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px}
+.answer small{font-size:11px;color:var(--muted)}
+.big{font-size:56px;font-weight:650;letter-spacing:-2px;line-height:1.1;margin:6px 0 4px}
+.conf{display:inline-flex;font-size:11px;font-weight:650;border-radius:5px;padding:4px 8px}
+.clear{color:var(--green);background:#e9f2e9}
+.moderate{color:var(--amber);background:#f5e9d6}
+.low{color:#803e29;background:#f8eae4}
+.panel{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px;min-width:0}
+.panel h2{font-size:14px;font-weight:750;margin-bottom:12px}
+.table{border-collapse:collapse;width:100%;font-size:12px}
+.table th,.table td{padding:9px 10px 9px 0;border-bottom:1px solid #e3e8e1;text-align:left;white-space:nowrap}
+.table th{font-size:10px;color:var(--muted);font-weight:600}
+.top td{font-weight:700;background:#fbf4e8}
+.bar{display:inline-block;height:8px;background:#af6b20;border-radius:4px;vertical-align:middle;margin-right:6px}
+.scroll{overflow-x:auto}
+.foot{margin-top:18px;font-size:11px;color:var(--muted);line-height:1.8}
+@media (max-width:900px){.hero{grid-template-columns:1fr}}

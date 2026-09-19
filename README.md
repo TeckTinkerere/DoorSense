@@ -1,5 +1,7 @@
 # DoorLens
 
+> **Nebula X 2026, PS3 submission** (Door + ACV). Write-up: [docs/WRITEUP.md](docs/WRITEUP.md) · Predictions: [`predictions/`](predictions/) (`door_predictions.csv`, `acv_predictions.csv`, `predictions.zip`) · Hosting steps: [docs/DEPLOY_GCP.md](docs/DEPLOY_GCP.md) · Video script: [docs/VIDEO_SCRIPT.md](docs/VIDEO_SCRIPT.md)
+
 **DoorLens classifies recorded door movements and lets you explore whether explicit recording assumptions change a result.**
 
 Upload recorded door telemetry, inspect each movement and its normal-reference trace, run a real synthetic sensitivity check, and download the unchanged original predictions. This is a local hackathon analysis tool. It has no connection to a train, platform door, signalling system, or operator maintenance system.
@@ -136,3 +138,19 @@ Set variables before launching. Increased limits need their own memory/performan
 - **Analysis expired:** upload again. Downloads always refer to the original result in the currently retained analysis.
 
 Implementation details and endpoints are in [API_CONTRACT.md](API_CONTRACT.md). Research rationale remains in the sibling `research/` directory and is not modified by application use.
+
+## ACV subsystem and combined submission
+
+The **ACV** tab ranks the 8 cars of a train by refrigerant-leak likelihood from a telemetry workbook (`.xlsx` or `.csv`). Method: per-car indoor-minus-cooling-setpoint gap, mean/median/90th percentile turned into peer z-scores within the file. It has no fitted parameters. It scores 0.979 on the six labelled training cases (5 of 6 ranked first; the selection of these three summaries was made on those same cases, so treat it as optimistic). Output: `acv_predictions.csv` (`file_id,ranked_cars`). `GET /api/submission.zip?door=<id>&acv_id=<id>` bundles both subsystems' CSVs at the ZIP root.
+
+Synthetic scenario testing against a live server (weaker leaks, moved leak, dropout, dead sensors, noise, 6-car trains, renamed columns, drifted Door gain/voltage, and more):
+
+```powershell
+.\.venv\Scripts\python.exe .\scripts\synthetic_eval.py --base http://127.0.0.1:8000
+```
+
+Results are written to `artifacts/synthetic-report.json`. The **How this works** page (`/how-it-works/`) is a plain-language guide for end users.
+
+## Google Cloud (Cloud Run)
+
+`Dockerfile` builds the frontend and API into one container. `scripts/deploy_gcp.ps1 -ProjectId <id>` deploys it to Cloud Run through Cloud Build. Analyses are held in memory, so the service is pinned to a single instance.

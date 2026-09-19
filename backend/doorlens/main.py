@@ -9,6 +9,8 @@ from fastapi.responses import JSONResponse
 from fastapi.staticfiles import StaticFiles
 from starlette.exceptions import HTTPException as StarletteHTTPException
 
+from doorlens.acv import AcvStore
+from doorlens.api.acv_routes import router as acv_router
 from doorlens.api.routes import router
 from doorlens.inference import InputError
 from doorlens.services.analysis import AnalysisService
@@ -23,6 +25,7 @@ def create_app(settings: Settings | None = None, store: AnalysisStore | None = N
     app = FastAPI(title="DoorLens", docs_url=None, redoc_url=None, openapi_url=None)
     app.state.settings = settings
     app.state.analysis_store = store
+    app.state.acv_store = AcvStore(settings.max_analyses + 2, settings.analysis_ttl_seconds)
     app.state.analysis_service = AnalysisService(settings, store, models)
     app.add_middleware(CORSMiddleware, allow_origins=list(settings.dev_origins),
                        allow_methods=["GET", "POST", "DELETE"], allow_headers=["Content-Type"])
@@ -57,6 +60,7 @@ def create_app(settings: Settings | None = None, store: AnalysisStore | None = N
             "code": "internal_error", "message": "The analysis could not be completed. Check the local server setup and bundled model artifacts."}})
 
     app.include_router(router)
+    app.include_router(acv_router)
 
     # Guard the whole API namespace before the frontend mount, for every method.
     @app.api_route("/api", methods=["GET", "POST", "PUT", "PATCH", "DELETE", "HEAD", "OPTIONS", "TRACE", "CONNECT"])

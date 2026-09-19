@@ -8,3 +8,8 @@ frontend/.next/
 frontend/out/
 frontend/*.tsbuildinfo
 artifacts/browser-failure.*
+
+# raw challenge data / generated scenario files (not part of the submission)
+Train_upload.csv
+artifacts/synthetic/
+*.pkl
