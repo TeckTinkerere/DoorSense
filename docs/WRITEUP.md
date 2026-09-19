@@ -1,6 +1,6 @@
 # DoorLens: Nebula X PS3 write-up
 
-**Submitted subsystem: Door.** (The app also includes an experimental ACV tab, which is not part of this submission's predictions.)
+**Subsystems attempted: Door and ACV** (2 of 4). One web app, one `predictions.zip`.
 
 ## Solution in one paragraph
 DoorLens is a local-first web app for train condition monitoring. Drop in a door-motor recording and it finds every open/close cycle and labels it *Normal* or *Abnormal resistance*. Drop in an ACV telemetry workbook and it ranks the eight cars from most to least likely to have the refrigerant leak. Each result comes with the evidence behind it (signal traces against a normal reference; a per-car temperature-gap chart), a CSV export in the exact challenge format, and plain-language limits.
@@ -12,7 +12,7 @@ DoorLens is a local-first web app for train condition monitoring. Drop in a door
 - **Score on the training stream:** IoU-weighted F1 = 1.000 (the final model is fitted on these 110 cycles, so this shows segmentation, not generalisation). `Test.csv` yields 38 cycles (30 Normal, 8 Abnormal); it has no public labels.
 - **Robustness check (synthetic).** Re-running perturbed copies of the training stream through the live app: halves/subsets, current noise (sd 15 mA), current ×1.15, normal-only and abnormal-only streams all keep F1 ≥ 0.99. Current ×0.85 gives 0.94 and **voltage +10 % drops to 0.82**: the Door model is sensitive to voltage gain drift.
 
-## Bonus, not submitted: ACV leak localisation by peer comparison
+## ACV: leak localisation by peer comparison
 Six training cases are too few to fit a model without overfitting, so the method has no fitted parameters. An undercharged car cools poorly: its indoor temperature sits above its own cooling setpoint by more than its peers'. For every car, over valid samples, we take the indoor-minus-setpoint gap, summarise it (mean, median, 90th percentile), convert each to a peer z-score within the file, and average. Cars with no valid data are ranked last. Column aliases handle the richer 483-column file.
 - **Training cases:** true car ranked first in 5 of 6, second in the other; mean rank-decay score **0.979**. We chose the three summaries after looking at these same six cases, so treat it as optimistic.
 - **Test file (`acv_test_case.xlsx`):** `01|03|07|04|08|06|02|05` with a moderate lead.

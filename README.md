@@ -1,6 +1,6 @@
 # DoorLens
 
-> **Nebula X 2026, PS3 submission** (subsystem: Door). Write-up: [docs/WRITEUP.md](docs/WRITEUP.md) · Predictions: [`predictions/`](predictions/) (`door_predictions.csv`, `predictions.zip`) · Hosting steps: [docs/DEPLOY_GCP.md](docs/DEPLOY_GCP.md) · Video script: [docs/VIDEO_SCRIPT.md](docs/VIDEO_SCRIPT.md)
+> **Nebula X 2026, PS3 submission** (Door + ACV). Write-up: [docs/WRITEUP.md](docs/WRITEUP.md) · Predictions: [`predictions/`](predictions/) (`door_predictions.csv`, `acv_predictions.csv`, `predictions.zip`) · Hosting steps: [docs/DEPLOY_GCP.md](docs/DEPLOY_GCP.md) · Video script: [docs/VIDEO_SCRIPT.md](docs/VIDEO_SCRIPT.md)
 
 **DoorLens classifies recorded door movements and lets you explore whether explicit recording assumptions change a result.**
 

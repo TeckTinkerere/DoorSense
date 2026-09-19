@@ -1,4 +1,12 @@
-# Demo video script (target 2:40, limit 3:00)
+# Demo video: script and steps (2 to 3 minutes)
+
+## Steps
+1. Open the hosted app in Chrome: https://doorlens-347525107872.asia-southeast1.run.app (open it once first so it is warm). Have `Test.csv` and `acv_test_case.xlsx` in an easy folder (Downloads or Desktop) so the file picker is quick.
+2. Start recording: press `Win+G`, click Capture, then the record button (or use OBS). Turn on the microphone.
+3. Follow the table below, speaking as you click. Aim for 2:30. Stay under 3:00.
+4. Stop recording. The file is in `Videos\Captures`.
+5. Upload to YouTube (studio.youtube.com, Create, Upload video). Set visibility to **Unlisted** (not Private, or judges cannot open it). Copy the `https://youtube.com/watch?v=...` link into the portal's **Pitch video URL**.
+
 
 Record the **hosted** URL if you have it, otherwise `http://127.0.0.1:8000` (run `scripts/start.ps1` first). Have ready: `Test.csv` (Door) and `acv_test_case.xlsx` (ACV) from the challenge data. Windows: `Win+G` (Game Bar) or OBS to record; speak while clicking.
 
